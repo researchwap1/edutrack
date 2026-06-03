@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduTrack — Student Result & Performance Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="CSS/style.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#" class="nav-logo">Edu<span>Track</span></a>
+    <a href="#access" class="nav-access-btn">Access Portal</a>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+
+    <!-- Background orbs for visual effect -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <div class="hero-inner">
+
+      <!-- LEFT SIDE — Text content -->
+      <div class="hero-content">
+
+        <div class="hero-badge">
+          <div class="dot"></div>
+          School Management System
+        </div>
+
+        <h1>
+          Track Every Student's<br>
+          <span class="highlight">Academic Journey</span><br>
+          In One Place
+        </h1>
+
+        <p>A complete result and performance management system for schools. Secure, organized, and built for teachers, admins, and students.</p>
+
+      </div>
+
+      <!-- RIGHT SIDE — Dashboard preview card -->
+      <div class="hero-visual">
+        <div class="dashboard-preview">
+
+          <!-- Preview card header -->
+          <div class="preview-header">
+            <div class="preview-avatar">JD</div>
+            <div>
+              <div class="preview-name">John Doe</div>
+              <div class="preview-role">JSS 2 — First Term</div>
+            </div>
+            <div class="preview-badge-active">Active</div>
+          </div>
+
+          <!-- Preview stats row -->
+          <div class="preview-stats">
+            <div class="stat-card">
+              <div class="stat-number gold">8</div>
+              <div class="stat-label">Subjects</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number blue">78%</div>
+              <div class="stat-label">Average</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">B+</div>
+              <div class="stat-label">Grade</div>
+            </div>
+          </div>
+
+          <!-- Preview result rows -->
+          <div class="preview-result-row">
+            <span class="subject-name">Mathematics</span>
+            <div class="score-bar-wrap">
+              <div class="score-bar" data-width="85%"></div>
+            </div>
+            <span class="score-val">85</span>
+            <span class="grade-badge grade-a">A</span>
+          </div>
+
+          <div class="preview-result-row">
+            <span class="subject-name">English</span>
+            <div class="score-bar-wrap">
+              <div class="score-bar" data-width="74%"></div>
+            </div>
+            <span class="score-val">74</span>
+            <span class="grade-badge grade-b">B</span>
+          </div>
+
+          <div class="preview-result-row">
+            <span class="subject-name">Science</span>
+            <div class="score-bar-wrap">
+              <div class="score-bar" data-width="91%"></div>
+            </div>
+            <span class="score-val">91</span>
+            <span class="grade-badge grade-a">A</span>
+          </div>
+
+          <div class="preview-result-row">
+            <span class="subject-name">Social Studies</span>
+            <div class="score-bar-wrap">
+              <div class="score-bar" data-width="68%"></div>
+            </div>
+            <span class="score-val">68</span>
+            <span class="grade-badge grade-c">C</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ACCESS SECTION -->
+  <section class="access-section" id="access">
+
+    <div class="reveal">
+      <p class="section-label">Access Your Portal</p>
+      <h2 class="section-title">Who Are You?</h2>
+      <p class="section-sub">Select your role to register or log in to your personal dashboard.</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="role-cards reveal">
+
+      <!-- STUDENT CARD -->
+      <div class="role-card">
+        <div class="card-icon icon-student">🎒</div>
+        <div class="card-title">Student</div>
+        <p class="card-desc">Access your results, download report cards, and manage your academic profile.</p>
+        <div class="card-actions">
+          <a href="pages/login-student.html" class="btn-card-primary">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            Login as Student
+          </a>
+        </div>
+      </div>
+
+      <!-- TEACHER CARD -->
+      <div class="role-card">
+        <div class="card-icon icon-teacher">📖</div>
+        <div class="card-title">Teacher</div>
+        <p class="card-desc">Enter student scores, view class results, and manage your assigned subjects and classes.</p>
+        <div class="card-actions">
+          <a href="pages/register-teacher.html" class="btn-card-primary gold-btn">
+            <i class="fa-solid fa-user-plus"></i>
+            Register as Teacher
+          </a>
+          <a href="pages/login-teacher.html" class="btn-card-secondary">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            Already registered? Login
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="#" class="footer-logo">Edu<span>Track</span></a>
+    <p class="footer-text">Empowering schools with smarter result management.</p>
+    <p class="footer-text">&copy; 2026 EduTrack. All rights reserved.</p>
+  </footer>
+
+  <script src="JS/main.js"></script>
+</body>
+</html>

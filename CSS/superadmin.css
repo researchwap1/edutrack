@@ -1630,3 +1630,198 @@ body {
 .staff-generate-btn:hover {
   background: #fcd34d;
 }
+
+
+/* ===== MANAGE CLASSES PAGE ===== */
+.btn-add-class {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  background: #1a56db;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s;
+  box-shadow: 0 4px 16px rgba(26, 86, 219, 0.3);
+}
+
+.btn-add-class:hover {
+  background: #3b82f6;
+  transform: translateY(-1px);
+}
+
+/* ===== CLASS CARDS GRID ===== */
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.class-card {
+  background: rgba(13, 34, 71, 0.5);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.class-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+.class-card-top {
+  padding: 22px 22px 18px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.class-badge-big {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.class-name-big {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 4px;
+}
+
+.class-level-text {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.class-card-body {
+  padding: 16px 22px;
+}
+
+.class-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.class-stat-label {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+
+.class-stat-val {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.class-progress-wrap {
+  height: 5px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.class-progress {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 1s ease;
+}
+
+.class-subjects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 16px;
+}
+
+.subject-chip {
+  font-size: 0.68rem;
+  padding: 3px 9px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.class-card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.class-action-btn {
+  flex: 1;
+  padding: 9px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: #94a3b8;
+}
+
+.class-action-btn.view {
+  color: #93c5fd;
+  border-color: rgba(59, 130, 246, 0.2);
+  background: rgba(59, 130, 246, 0.06);
+}
+
+.class-action-btn.view:hover {
+  background: rgba(59, 130, 246, 0.14);
+}
+
+.class-action-btn.edit {
+  color: #fcd34d;
+  border-color: rgba(245, 158, 11, 0.2);
+  background: rgba(245, 158, 11, 0.06);
+}
+
+.class-action-btn.edit:hover {
+  background: rgba(245, 158, 11, 0.14);
+}
+
+.class-action-btn.delete {
+  color: #f87171;
+  border-color: rgba(248, 113, 113, 0.2);
+  background: rgba(248, 113, 113, 0.06);
+}
+
+.class-action-btn.delete:hover {
+  background: rgba(248, 113, 113, 0.14);
+}
+
+/* ===== RESPONSIVE CLASSES GRID ===== */
+@media (max-width: 1100px) {
+  .classes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .classes-grid {
+    grid-template-columns: 1fr;
+  }
+}

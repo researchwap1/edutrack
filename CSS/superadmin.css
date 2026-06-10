@@ -497,6 +497,22 @@ body {
   color: var(--white);
 }
 
+.action-btn-lbl.activate-btn {
+  color: #4ade80;
+  border-color: rgba(74, 222, 128, 0.2);
+  background: rgba(74, 222, 128, 0.07);
+}
+
+.action-btn-lbl.activate-btn:hover {
+  background: rgba(74, 222, 128, 0.15);
+}
+
+.status-badge.deactivated {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
 .action-sub {
   font-size: 0.72rem;
   color: var(--text-muted);
@@ -518,6 +534,7 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
   font-family: 'DM Sans', sans-serif;
+  text-decoration: none;
 }
 
 .gen-id-btn:hover {
@@ -1037,6 +1054,12 @@ body {
   color: #f87171;
 }
 
+.status-badge.deactivated {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
 /* ===== ACTION BUTTONS IN TABLE ===== */
 .action-btns {
   display: flex;
@@ -1073,6 +1096,11 @@ body {
 
 .action-icon-btn.edit:hover {
   background: rgba(245, 158, 11, 0.25);
+}
+
+#edit-class option {
+  background-color: #0d2247;
+  color: #ffffff;
 }
 
 .action-icon-btn.delete {
@@ -1375,4 +1403,230 @@ body {
   .form-row {
     grid-template-columns: 1fr;
   }
+}
+
+/* ===== STAFF PAGE SPECIFIC ===== */
+.btn-generate-id-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f59e0b;
+  color: #070e1a;
+  border: none;
+  padding: 11px 18px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3);
+}
+
+.btn-generate-id-toolbar:hover {
+  background: #fcd34d;
+  transform: translateY(-1px);
+}
+
+.mini-stat-icon.purple {
+  background: rgba(124, 58, 237, 0.12);
+  color: #a78bfa;
+}
+
+.staff-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.staff-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.staff-name {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.staff-id-code {
+  font-family: monospace;
+  font-size: 0.78rem;
+  color: #fcd34d;
+  letter-spacing: 0.5px;
+}
+
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.role-badge.teacher {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.22);
+  color: #fcd34d;
+}
+
+.role-badge.admin {
+  background: rgba(124, 58, 237, 0.12);
+  border: 1px solid rgba(124, 58, 237, 0.22);
+  color: #c4b5fd;
+}
+
+.subject-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.subject-tag {
+  font-size: 0.68rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  color: #93c5fd;
+  white-space: nowrap;
+}
+
+.class-tag {
+  font-size: 0.68rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: rgba(74, 222, 128, 0.08);
+  border: 1px solid rgba(74, 222, 128, 0.15);
+  color: #86efac;
+  white-space: nowrap;
+}
+
+.action-btn-lbl {
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.action-btn-lbl.view {
+  color: #93c5fd;
+  border-color: rgba(59, 130, 246, 0.2);
+  background: rgba(59, 130, 246, 0.07);
+}
+
+.action-btn-lbl.view:hover {
+  background: rgba(59, 130, 246, 0.15);
+}
+
+.action-btn-lbl.gen-id {
+  color: #fcd34d;
+  border-color: rgba(245, 158, 11, 0.2);
+  background: rgba(245, 158, 11, 0.07);
+}
+
+.action-btn-lbl.gen-id:hover {
+  background: rgba(245, 158, 11, 0.15);
+}
+
+.action-btn-lbl.deactivate {
+  color: #f87171;
+  border-color: rgba(248, 113, 113, 0.2);
+  background: rgba(248, 113, 113, 0.07);
+}
+
+.action-btn-lbl.deactivate:hover {
+  background: rgba(248, 113, 113, 0.15);
+}
+
+/* ===== GENERATED ID DISPLAY ===== */
+.generated-id-display {
+  display: none;
+  padding: 18px;
+  background: rgba(245, 158, 11, 0.07);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 14px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.generated-id-display.show {
+  display: block;
+}
+
+.gen-id-label {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.gen-id-value {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fcd34d;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.gen-id-note {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+.copy-id-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 8px;
+  color: #fcd34d;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.copy-id-btn:hover {
+  background: rgba(245, 158, 11, 0.25);
+}
+
+.staff-generate-btn {
+  background: #f59e0b;
+  color: #070e1a;
+  font-weight: 700;
+}
+
+.staff-generate-btn:hover {
+  background: #fcd34d;
 }

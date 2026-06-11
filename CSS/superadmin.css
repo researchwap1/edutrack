@@ -2254,3 +2254,217 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== USER MANAGEMENT PAGE ===== */
+.security-alert {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  border-radius: 14px;
+  margin-bottom: 20px;
+}
+
+.alert-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(220, 38, 38, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #f87171;
+  font-size: 16px;
+}
+
+.alert-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #f87171;
+  margin-bottom: 2px;
+}
+
+.alert-text {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  font-weight: 300;
+}
+
+.alert-dismiss {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 6px;
+  font-size: 14px;
+  transition: color 0.2s;
+  flex-shrink: 0;
+}
+
+.alert-dismiss:hover {
+  color: #ffffff;
+}
+
+/* User cell */
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.u-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.u-name {
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.u-id {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  margin-top: 1px;
+  font-family: monospace;
+}
+
+/* Role badges - extra variants */
+.role-badge.superadmin {
+  background: rgba(124, 58, 237, 0.15);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  color: #c4b5fd;
+}
+
+.role-badge.student {
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.22);
+  color: #93c5fd;
+}
+
+/* Status - suspended variant */
+.status-badge.suspended {
+  background: rgba(248, 113, 113, 0.1);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.2);
+}
+
+.last-login {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* Main layout for table + right panel */
+.main-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 20px;
+  align-items: start;
+}
+
+/* Role summary */
+.role-summary-list {
+  padding: 8px 0;
+}
+
+.role-summary-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.role-summary-item:last-child {
+  border-bottom: none;
+}
+
+.role-summary-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.84rem;
+  color: #e2e8f0;
+}
+
+.role-dot-big {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.role-summary-count {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Login activity log */
+.login-log {
+  padding: 6px 0;
+}
+
+.log-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 11px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.log-item:last-child {
+  border-bottom: none;
+}
+
+.log-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.log-dot.success { background: #4ade80; }
+.log-dot.fail { background: #f87171; }
+
+.log-text {
+  font-size: 0.8rem;
+  color: #e2e8f0;
+  line-height: 1.4;
+}
+
+.log-text span {
+  color: #93c5fd;
+  font-weight: 500;
+}
+
+.log-text .fail-text {
+  color: #f87171;
+}
+
+.log-time {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+@media (max-width: 1100px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
+}

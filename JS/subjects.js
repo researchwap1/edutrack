@@ -239,21 +239,9 @@ function assignSubject(name) {
   if (existing) existing.remove()
 
   const checkboxes = allClasses.map(cls => `
-    <div class="checkbox-item ${subject.classes.includes(cls) ? 'checked' : ''}" data-class="${cls}" onclick="toggleCheck(this)" style="
-      display:flex; align-items:center; gap:8px;
-      background:${subject.classes.includes(cls) ? 'rgba(59,130,246,0.12)' : 'rgba(255,255,255,0.04)'};
-      border:1px solid ${subject.classes.includes(cls) ? 'rgba(59,130,246,0.3)' : 'rgba(255,255,255,0.09)'};
-      border-radius:8px; padding:9px 12px; cursor:pointer;
-    ">
-      <div class="check-box" style="
-        width:16px; height:16px; border-radius:4px;
-        border:1.5px solid ${subject.classes.includes(cls) ? '#1a56db' : 'rgba(255,255,255,0.2)'};
-        background:${subject.classes.includes(cls) ? '#1a56db' : 'transparent'};
-        display:flex; align-items:center; justify-content:center;
-        color:${subject.classes.includes(cls) ? '#fff' : 'transparent'};
-        font-size:9px;
-      "><i class="fa-solid fa-check"></i></div>
-      <span style="font-size:0.8rem; color:${subject.classes.includes(cls) ? '#93c5fd' : '#94a3b8'};">${cls}</span>
+    <div class="checkbox-item ${subject.classes.includes(cls) ? 'checked' : ''}" data-class="${cls}" onclick="toggleCheck(this)">
+      <div class="check-box"><i class="fa-solid fa-check" style="font-size:9px;"></i></div>
+      <span class="check-label">${cls}</span>
     </div>
   `).join('')
 

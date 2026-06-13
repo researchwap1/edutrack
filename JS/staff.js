@@ -187,6 +187,8 @@ function showDeactivateMenu(event, staffId) {
   event.stopPropagation()
   removeDeactivateMenu()
 
+  const pos = clampMenuPosition(event.clientX, event.clientY, 230, 140)
+
   const menu = document.createElement('div')
   menu.id = 'deactivate-menu'
   menu.style.cssText = `
@@ -198,8 +200,8 @@ function showDeactivateMenu(event, staffId) {
     z-index: 300;
     min-width: 230px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-    top: ${event.clientY + 8}px;
-    left: ${event.clientX - 110}px;
+    top: ${pos.top}px;
+    left: ${pos.left}px;
   `
 
   menu.innerHTML = `

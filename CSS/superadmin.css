@@ -96,6 +96,13 @@ body {
   50% { opacity: 0.3; }
 }
 
+/* ===== PREVENT LOGO OVERLAP WITH MOBILE TOGGLE BUTTON ===== */
+@media (max-width: 768px) {
+  .sidebar.open .sidebar-logo {
+    padding-left: 64px;
+  }
+}
+
 /* ===== SIDEBAR PROFILE ===== */
 .sidebar-profile {
   padding: 16px 24px;
@@ -2467,4 +2474,262 @@ body {
   .main-layout {
     grid-template-columns: 1fr;
   }
+}
+
+/* =========================================================
+   RESPONSIVE — FINAL PASS (applies to all super admin pages)
+   ========================================================= */
+
+/* ===== MOBILE SIDEBAR TOGGLE + BACKDROP ===== */
+.mobile-toggle-btn {
+  display: none;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 300;
+  background: #0d2247;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.mobile-toggle-btn:hover {
+  background: rgba(59, 130, 246, 0.15);
+}
+
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 49;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.sidebar-backdrop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===== DYNAMIC MODAL 2-COLUMN ROW ===== */
+.dyn-form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* ===== TABLE ACTION BUTTONS WRAP ===== */
+.action-btns {
+  flex-wrap: wrap;
+  row-gap: 6px;
+}
+
+/* ===== PAGINATION WRAP ===== */
+.pagination {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ===== TABLET (≤900px) ===== */
+@media (max-width: 900px) {
+  .topbar-left h1 {
+    font-size: 1.15rem;
+  }
+
+  .modal {
+    padding: 22px;
+  }
+}
+
+/* ===== MOBILE (≤768px) ===== */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Sidebar becomes a slide-in drawer */
+  .sidebar {
+    transform: translateX(-260px);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: 20px 0 60px rgba(0, 0, 0, 0.5);
+  }
+
+  .main {
+    margin-left: 0;
+  }
+
+  .mobile-toggle-btn {
+    display: flex;
+  }
+
+  /* Push topbar content right so it doesn't sit under the toggle button */
+  .topbar {
+    padding-left: 64px;
+  }
+
+  .topbar-date {
+    display: none;
+  }
+
+  .topbar-left p {
+    font-size: 0.75rem;
+  }
+
+  .page-content {
+    padding: 18px 14px;
+  }
+
+  /* Stat / mini-stat grids collapse to 2 columns everywhere */
+  .stats-row,
+  .mini-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  /* Quick actions, dashboard right column, classes grid, etc go single column */
+  .quick-actions,
+  .right-col,
+  .dashboard-grid,
+  .classes-grid,
+  .subjects-main-grid,
+  .results-layout,
+  .main-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Section cards / table cards get tighter padding */
+  .section-card,
+  .table-card {
+    border-radius: 14px;
+  }
+
+  .table-header,
+  .section-header {
+    padding: 16px 16px 12px;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 10px 12px;
+    font-size: 0.78rem;
+  }
+
+  .action-btns {
+    gap: 6px;
+  }
+
+  .action-icon-btn,
+  .action-btn-lbl,
+  .subj-action-btn,
+  .class-action-btn {
+    font-size: 0.7rem;
+    padding: 5px 8px;
+    height: auto;
+  }
+
+  /* Modals get full-width feel with small side margins */
+  .modal,
+  #view-modal-overlay > div,
+  #edit-student-overlay > div,
+  #view-student-overlay > div,
+  #view-class-overlay > div,
+  #edit-class-overlay > div,
+  #edit-subject-overlay > div,
+  #assign-overlay > div,
+  #view-result-overlay > div,
+  #view-user-overlay > div {
+    margin: 14px !important;
+    padding: 20px !important;
+    max-width: calc(100% - 28px) !important;
+  }
+}
+
+/* ===== SMALL MOBILE (≤480px) ===== */
+@media (max-width: 480px) {
+  .stats-row,
+  .mini-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .dyn-form-row-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar-left p {
+    display: none;
+  }
+
+  .topbar-avatar,
+  .profile-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 0.7rem;
+  }
+
+  .security-alert {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .checkbox-group,
+  #assign-checkboxes {
+    grid-template-columns: 1fr !important;
+  }
+
+  .btn-add-class,
+  .btn-add-student,
+  .btn-generate-id-toolbar {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ===== TOOLBAR — FORCE FULL-WIDTH STACK ON SMALL SCREENS ===== */
+@media (max-width: 600px) {
+  .toolbar {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .toolbar > * {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .search-wrap {
+    flex: none;
+  }
+}
+
+/* ===== GLOBAL HORIZONTAL OVERFLOW GUARD ===== */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.main,
+.page-content {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* The ONE deliberate exception — wide tables scroll within their own box */
+.table-wrap {
+  overflow-x: auto;
+  max-width: 100%;
 }

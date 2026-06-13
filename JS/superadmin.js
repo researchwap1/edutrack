@@ -69,39 +69,74 @@ setActiveNav()
 
 // ===== MOBILE SIDEBAR TOGGLE =====
 function createMobileToggle() {
-  if (window.innerWidth > 768) return
-  const toggleBtn = document.createElement('button')
-  toggleBtn.innerHTML = '<i class="fa-solid fa-bars"></i>'
-  toggleBtn.style.cssText = `
-    position: fixed;
-    top: 16px;
-    left: 16px;
-    z-index: 300;
-    background: #0d2247;
-    border: 1px solid rgba(255,255,255,0.1);
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  `
-  document.body.appendChild(toggleBtn)
   const sidebar = document.querySelector('.sidebar')
-  toggleBtn.addEventListener('click', () => {
-    sidebar.classList.toggle('open')
-  })
-  document.addEventListener('click', (e) => {
-    if (!sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
-      sidebar.classList.remove('open')
+  if (!sidebar) return
+
+  // Hamburger button — always created, visibility controlled by CSS media query
+  const toggleBtn = document.createElement('button')
+  toggleBtn.className = 'mobile-toggle-btn'
+  toggleBtn.innerHTML = '<i class="fa-solid fa-bars"></i>'
+  document.body.appendChild(toggleBtn)
+
+  // Dark backdrop behind the sidebar when open on mobile
+  const backdrop = document.createElement('div')
+  backdrop.className = 'sidebar-backdrop'
+  document.body.appendChild(backdrop)
+
+ function closeSidebar() {
+    sidebar.classList.remove('open')
+    backdrop.classList.remove('show')
+    updateToggleIcon()
+  }
+
+  function openSidebar() {
+    sidebar.classList.add('open')
+    backdrop.classList.add('show')
+    updateToggleIcon()
+  }
+
+ toggleBtn.addEventListener('click', () => {
+    if (sidebar.classList.contains('open')) {
+      closeSidebar()
+    } else {
+      openSidebar()
     }
+  })
+
+  // Update the icon to reflect open/closed state
+  function updateToggleIcon() {
+    toggleBtn.innerHTML = sidebar.classList.contains('open')
+      ? '<i class="fa-solid fa-xmark"></i>'
+      : '<i class="fa-solid fa-bars"></i>'
+  }
+
+  backdrop.addEventListener('click', closeSidebar)
+
+  // If the window is resized back to desktop width, force-close the drawer
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) closeSidebar()
   })
 }
 
 createMobileToggle()
+
+
+// ===== CLAMP A FLOATING MENU SO IT NEVER GOES OFF-SCREEN =====
+function clampMenuPosition(x, y, menuWidth, menuHeight) {
+  const padding = 10
+  let left = x - (menuWidth / 2)
+  let top = y + 8
+
+  if (left < padding) left = padding
+  if (left + menuWidth > window.innerWidth - padding) {
+    left = window.innerWidth - menuWidth - padding
+  }
+  if (top + menuHeight > window.innerHeight - padding) {
+    top = y - menuHeight - 8
+  }
+
+  return { left, top }
+}
 
 
 // ===== RUN EVERYTHING ON PAGE LOAD =====

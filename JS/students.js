@@ -211,8 +211,7 @@ function editStudent(reg) {
           ">✕</button>
         </div>
 
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px;">
-          <div>
+        <div class="dyn-form-row-2" style="margin-bottom:14px;">
             <label style="display:block; font-size:0.78rem; color:#94a3b8; margin-bottom:7px;">First Name</label>
             <input id="edit-firstname" type="text" value="${student.name.split(' ')[0]}" style="
               width:100%; padding:11px 14px;
@@ -329,8 +328,10 @@ function showDeleteMenu(event, reg) {
   event.stopPropagation()
   removeDeleteMenu()
 
+  const pos = clampMenuPosition(event.clientX, event.clientY, 230, 140)
+
   const menu = document.createElement('div')
-  menu.id = 'delete-menu'
+  menu.id = 'deactivate-menu'
   menu.style.cssText = `
     position: fixed;
     background: #0d2247;
@@ -340,8 +341,8 @@ function showDeleteMenu(event, reg) {
     z-index: 300;
     min-width: 230px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-    top: ${event.clientY + 8}px;
-    left: ${event.clientX - 110}px;
+    top: ${pos.top}px;
+    left: ${pos.left}px;
   `
 
   menu.innerHTML = `
